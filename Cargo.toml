@@ -1,0 +1,17 @@
+[package]
+name = "xenstore-sys"
+version = "0.1.1"
+authors = ["Mathieu Tarral <mathieu.tarral@protonmail.com>"]
+edition = "2018"
+links = "xenstore"
+repository = "https://github.com/Wenzel/xen-sys"
+readme = "README.md"
+keywords = ["xen"]
+description = "Rust bindings for Xenstore"
+license = "GPL-3.0-only"
+licence-file = "LICENSE"
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.49.2"
