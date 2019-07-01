@@ -9,7 +9,6 @@ readme = "README.md"
 keywords = ["xen"]
 description = "Rust bindings for Xenstore"
 license = "GPL-3.0-only"
-licence-file = "LICENSE"
 
 [dependencies]
 
