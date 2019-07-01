@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/Wenzel/xenstore-sys.svg?branch=master)](https://travis-ci.org/Wenzel/xenstore-sys)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-> Rust bindings for Xenstore library
+> Rust bindings for xenstore library
 
 ## Table of Contents
 
@@ -36,5 +36,4 @@ Small note: If editing the Readme, please conform to the [standard-readme](https
 
 ## License
 
-[GNU General Public License v3.0](https://github.com/Wenzel/pyvmidbg/blob/master/LICENSE)
-
+Check `Cargo.toml`
