@@ -3,12 +3,15 @@ name = "xenstore-sys"
 version = "0.1.1"
 authors = ["Mathieu Tarral <mathieu.tarral@protonmail.com>"]
 edition = "2018"
-links = "xenstore"
-repository = "https://github.com/Wenzel/xenstore-sys"
+description = "Rust FFI bindings for libxenstore"
 readme = "README.md"
-keywords = ["xen"]
-description = "Rust bindings for Xenstore"
+homepage = "https://github.com/Wenzel/xenstore-sys"
+repository = "https://github.com/Wenzel/xenstore-sys"
 license = "GPL-3.0-only"
+keywords = ["xen", "xenstore"]
+categories = ["external-ffi-bindings"]
+links = "xenstore"
+build = "build.rs"
 
 [dependencies]
 
