@@ -1,6 +1,6 @@
 [package]
 name = "xenstore-sys"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Mathieu Tarral <mathieu.tarral@protonmail.com>"]
 edition = "2018"
 description = "Rust FFI bindings for libxenstore"
