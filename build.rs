@@ -5,7 +5,6 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    let is_static = true;
     // use pkg_config to search for xenstore.pc config file
     // disable cargo metadata, we need to configure rustc manually
     // do not use .statik(), since this feature is buggy due to
@@ -23,7 +22,7 @@ fn main() {
     // manually specify xentoolcore, since we have no way to retrieve the "Requires.private" xenstore.pc field
     // from the Library struct returned by pkg_config
     // and we don't use .statik(), see message above
-    if is_static {
+    if cfg!(feature = "static") {
         println!("cargo:rustc-link-lib=static=xenstore");
         println!("cargo:rustc-link-lib=static=xentoolcore");
     } else {
