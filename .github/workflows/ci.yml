@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         subcommand: ['build', 'clippy', 'test']
+        feature: ['', 'static']
     steps:
       - uses: actions/checkout@v4
 
@@ -19,4 +20,9 @@ jobs:
 
       - run: sudo apt-get install -y libxen-dev
 
-      - run: cargo ${{ matrix.subcommand }}
+      - run: |
+          if [ -z "${{ matrix.feature }}" ]; then
+            cargo ${{ matrix.subcommand }}
+          else
+            cargo ${{ matrix.subcommand }} --features ${{ matrix.feature }}
+          fi
