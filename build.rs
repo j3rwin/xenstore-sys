@@ -14,7 +14,7 @@ fn main() {
         .probe("xenstore")
         .expect("Failed to locate xenstore library");
 
-    // add search path
+    // add link paths
     for path in &xenstore.link_paths {
         println!("cargo:rustc-link-search=native={}", path.display());
     }
@@ -29,6 +29,13 @@ fn main() {
         println!("cargo:rustc-link-lib=xenstore");
     }
 
+    // include paths will be added as additional clang args to Bindgen Builder
+    let include_args: Vec<String> = xenstore
+        .include_paths
+        .iter()
+        .map(|path| format!("-I{}", path.to_string_lossy()))
+        .collect();
+
     // The bindgen::Builder is the main entry point
     // to bindgen, and lets you build up options for
     // the resulting bindings.
@@ -36,6 +43,8 @@ fn main() {
         // The input header we would like to generate
         // bindings for.
         .header("src/wrapper.h")
+        // additional include paths
+        .clang_args(include_args)
         // Finish the builder and generate the bindings.
         .generate()
         // Unwrap the Result and panic on failure.
